@@ -12,4 +12,8 @@ public class Facility {
 
     @Column(name = "name", nullable = false, length = 250)
     private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_id")
+    private Room room;
 }
