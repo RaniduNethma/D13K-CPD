@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "address")
-public class Address {
+public class AddressEntity {
 
     @Id
     @Column(name = "address_id", nullable = false, length = 80)
@@ -29,5 +29,5 @@ public class Address {
 
     @OneToOne()
     @JoinColumn(name = "branch_id")
-    private Branch branch;
+    private BranchEntity branchEntity;
 }

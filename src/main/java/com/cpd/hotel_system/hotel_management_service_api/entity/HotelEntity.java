@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "hotel")
-public class Hotel {
+public class HotelEntity {
 
     @Id
     @Column(name = "hotel_id", nullable = false, length = 80)
@@ -37,6 +37,6 @@ public class Hotel {
     @Column(name = "starting_from")
     private BigDecimal startingFrom;
 
-    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
-    private List<Branch> branches;
+    @OneToMany(mappedBy = "hotelEntity", cascade = CascadeType.ALL)
+    private List<BranchEntity> branchEntities;
 }

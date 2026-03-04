@@ -2,13 +2,12 @@ package com.cpd.hotel_system.hotel_management_service_api.entity;
 
 import com.cpd.hotel_system.hotel_management_service_api.enums.BranchType;
 import jakarta.persistence.*;
-import org.springframework.context.annotation.Lazy;
 
 import java.util.List;
 
 @Entity
 @Table(name = "branch")
-public class Branch {
+public class BranchEntity {
 
     @Id
     @Column(name = "branch_id", nullable = false, length = 80)
@@ -26,11 +25,11 @@ public class Branch {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hotel_id")
-    private Hotel hotel;
+    private HotelEntity hotelEntity;
 
-    @OneToOne(mappedBy = "branch", cascade = CascadeType.ALL)
-    private Address address;
+    @OneToOne(mappedBy = "branchEntity", cascade = CascadeType.ALL)
+    private AddressEntity addressEntity;
 
-    @OneToMany(mappedBy = "branch", cascade = CascadeType.ALL)
-    private List<Room> rooms;
+    @OneToMany(mappedBy = "branchEntity", cascade = CascadeType.ALL)
+    private List<RoomEntity> roomEntities;
 }

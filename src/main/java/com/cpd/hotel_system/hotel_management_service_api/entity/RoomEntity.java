@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "room")
-public class Room {
+public class RoomEntity {
 
     @Id
     @Column(name = "room_id", nullable = false, length = 80)
@@ -30,11 +30,11 @@ public class Room {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "branch_id")
-    private Branch branch;
+    private BranchEntity branchEntity;
 
-    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
-    private List<Facility> facilities;
+    @OneToMany(mappedBy = "roomEntity", cascade = CascadeType.ALL)
+    private List<FacilityEntity> facilities;
 
-    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
-    private List<Image> images;
+    @OneToMany(mappedBy = "roomEntity", cascade = CascadeType.ALL)
+    private List<ImageEntity> imageEntities;
 }
