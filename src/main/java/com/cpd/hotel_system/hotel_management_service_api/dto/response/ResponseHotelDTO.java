@@ -15,7 +15,7 @@ public class ResponseHotelDTO {
     private String hotelId;
     private String name;
     private String description;
-    private boolean ActiveStatus;
+    private boolean activeStatus;
     private int starRating;
     private BigDecimal startingFrom;
     private LocalDateTime createdAt;
